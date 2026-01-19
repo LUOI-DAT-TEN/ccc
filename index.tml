@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngày Quốc tế Phụ nữ 8/3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 900px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #e91e63;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .content {
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .flowers {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .flower-card {
+            position: relative;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 20px;
+            padding: 30px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: white;
+        }
+
+        .flower-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(233, 30, 99, 0.4);
+        }
+
+        .flower-icon {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+
+        .flower-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Tooltip styles */
+        .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            width: 250px;
+            text-align: left;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 10px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .flower-card:hover .tooltip {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-20px);
+        }
+
+        .wishes {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .wishes h2 {
+            color: #e91e63;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .wish-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .wish-item {
+            position: relative;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid #e91e63;
+        }
+
+        .wish-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+        }
+
+        .wish-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .wish-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .flowers {
+                gap: 20px;
+            }
+
+            .flower-card {
+                width: 150px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="floating">🌸 Ngày 8 Tháng 3 🌸</h1>
+        <p class="subtitle">Ngày Quốc tế Phụ nữ</p>
+
+        <div class="content">
+            <p>
+                Ngày 8 tháng 3 là ngày để tôn vinh và tri ân những người phụ nữ - những người mẹ, người vợ, 
+                người chị em, người bạn gái tuyệt vời trong cuộc sống của chúng ta. Đây là dịp để gửi đến 
+                các bạn những lời chúc tốt đẹp nhất và sự trân trọng sâu sắc.
+            </p>
+        </div>
+
+        <h2 style="text-align: center; color: #e91e63; margin-bottom: 30px;">
+            Hoa Tặng Ngày 8/3
+        </h2>
+
+        <div class="flowers">
+            <div class="flower-card">
+                <div class="flower-icon">🌹</div>
+                <div class="flower-name">Hoa Hồng</div>
+                <div class="tooltip">
+                    Biểu tượng của tình yêu và sự quý trọng. Hoa hồng đỏ thể hiện tình yêu mãnh liệt, 
+                    hoa hồng hồng tượng trưng cho lòng biết ơn.
+                </div>
+            </div>
+
+            <div class="flower-card">
+                <div class="flower-icon">🌷</div>
+                <div class="flower-name">Hoa Tulip</div>
+                <div class="tooltip">
+                    Tượng trưng cho tình yêu hoàn hảo và sự quyến rũ. Tulip đỏ thể hiện tình yêu chân thành, 
+                    tulip vàng mang ý nghĩa niềm vui và hạnh phúc.
+                </div>
+            </div>
+
+            <div class="flower-card">
+                <div class="flower-icon">🌺</div>
+                <div class="flower-name">Hoa Lan</div>
+                <div class="tooltip">
+                    Biểu tượng của sự sang trọng, thanh lịch và vẻ đẹp tinh tế. Lan tượng trưng cho 
+                    sự quý phái và tình yêu cao thượng.
+                </div>
+            </div>
+
+            <div class="flower-card">
+                <div class="flower-icon">🌻</div>
+                <div class="flower-name">Hoa Hướng Dương</div>
+                <div class="tooltip">
+                    Tượng trưng cho sự lạc quan, năng lượng tích cực và niềm tin vào tương lai tươi sáng. 
+                    Thể hiện lòng trung thành và sự ngưỡng mộ.
+                </div>
+            </div>
+        </div>
+
+        <div class="wishes">
+            <h2>💝 Lời Chúc Tốt Đẹp 💝</h2>
+            <div class="wish-items">
+                <div class="wish-item">
+                    <div class="wish-icon">💐</div>
+                    <div class="wish-title">Sức Khỏe</div>
+                    <div class="tooltip">
+                        Chúc bạn luôn tràn đầy sức khỏe, năng lượng để chinh phục mọi ước mơ và đam mê trong cuộc sống!
+                    </div>
+                </div>
+
+                <div class="wish-item">
+                    <div class="wish-icon">✨</div>
+                    <div class="wish-title">Hạnh Phúc</div>
+                    <div class="tooltip">
+                        Mong bạn luôn tìm thấy niềm vui trong từng khoảnh khắc, hạnh phúc trong mọi điều nhỏ bé của cuộc sống!
+                    </div>
+                </div>
+
+                <div class="wish-item">
+                    <div class="wish-icon">🌟</div>
+                    <div class="wish-title">Thành Công</div>
+                    <div class="tooltip">
+                        Chúc bạn đạt được mọi mục tiêu đã đề ra, thành công rực rỡ trong sự nghiệp và cuộc sống!
+                    </div>
+                </div>
+
+                <div class="wish-item">
+                    <div class="wish-icon">💖</div>
+                    <div class="wish-title">Yêu Thương</div>
+                    <div class="tooltip">
+                        Mong bạn luôn được yêu thương, trân trọng và tìm thấy tình yêu đích thực trong cuộc đời!
+                    </div>
+                </div>
+
+                <div class="wish-item">
+                    <div class="wish-icon">🎨</div>
+                    <div class="wish-title">Tươi Trẻ</div>
+                    <div class="tooltip">
+                        Chúc bạn mãi giữ được tuổi thanh xuân, sự tươi trẻ và nét đẹp rạng ngời mỗi ngày!
+                    </div>
+                </div>
+
+                <div class="wish-item">
+                    <div class="wish-icon">🌈</div>
+                    <div class="wish-title">May Mắn</div>
+                    <div class="tooltip">
+                        Mong những điều tốt đẹp nhất sẽ luôn đến với bạn, may mắn và thuận lợi trong mọi việc!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add hover effect sound or additional interactions
+        const wishItems = document.querySelectorAll('.wish-item');
+        
+        wishItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.borderLeftWidth = '8px';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.borderLeftWidth = '4px';
+            });
+        });
+
+        // Add some sparkle effect on flower cards
+        const flowerCards = document.querySelectorAll('.flower-card');
+        
+        flowerCards.forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(1.1) rotate(5deg)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
