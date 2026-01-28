@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngày Quốc tế Phụ nữ 8/3</title>
+    <title>Ngày Quốc Tế Phụ Nữ 8/3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,326 +14,482 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff9fb;
+            background-image: radial-gradient(#ffcce6 1.5px, transparent 1.5px);
+            background-size: 30px 30px;
+            overflow-x: hidden;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            padding: 50px;
-            max-width: 900px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff66b2, #ff3385);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(255, 102, 178, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "🌸";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 30px;
+        }
+
+        header::after {
+            content: "💐";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 30px;
         }
 
         h1 {
-            text-align: center;
-            color: #e91e63;
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .subtitle {
+            font-size: 1.2rem;
+            font-weight: 500;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .intro-section {
+            padding: 60px 0;
             text-align: center;
-            color: #666;
-            font-size: 1.2em;
-            margin-bottom: 40px;
         }
 
-        .content {
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 40px;
-        }
-
-        .flowers {
+        .intro-content {
             display: flex;
-            justify-content: space-around;
+            align-items: center;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 30px;
-            margin: 40px 0;
+            gap: 40px;
+            margin-top: 30px;
         }
 
-        .flower-card {
-            position: relative;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            border-radius: 20px;
-            padding: 30px;
-            width: 200px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            color: white;
-        }
-
-        .flower-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(233, 30, 99, 0.4);
-        }
-
-        .flower-icon {
-            font-size: 4em;
-            margin-bottom: 10px;
-        }
-
-        .flower-name {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        /* Tooltip styles */
-        .tooltip {
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-10px);
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            font-size: 0.9em;
-            width: 250px;
+        .intro-text {
+            flex: 1;
+            min-width: 300px;
             text-align: left;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 102, 178, 0.15);
+            border-left: 5px solid #ff66b2;
         }
 
-        .tooltip::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 10px solid transparent;
-            border-top-color: rgba(0, 0, 0, 0.9);
+        .intro-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 102, 178, 0.2);
         }
 
-        .flower-card:hover .tooltip {
-            opacity: 1;
-            transform: translateX(-50%) translateY(-20px);
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
         }
 
-        .wishes {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            border-radius: 20px;
+        .intro-image img:hover {
+            transform: scale(1.03);
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff3385;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #ff66b2;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Quotes Section */
+        .quotes-section {
+            padding: 60px 0;
+            background-color: rgba(255, 230, 243, 0.5);
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(255, 102, 178, 0.1);
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .quote-container::before {
+            content: "❝";
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 60px;
+            color: #ffcce6;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            padding-left: 40px;
+        }
+
+        .quote-author {
+            text-align: right;
+            color: #ff66b2;
+            font-weight: 700;
+        }
+
+        /* Wishes Generator */
+        .wishes-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .wish-box {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 102, 178, 0.15);
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed #ffcce6;
+        }
+
+        .wish-text {
+            font-size: 1.3rem;
+            color: #ff3385;
+            font-weight: 500;
+        }
+
+        .generate-btn {
+            background: linear-gradient(to right, #ff66b2, #ff3385);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(255, 102, 178, 0.4);
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 102, 178, 0.6);
+        }
+
+        .generate-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Flowers Animation */
+        .flower {
+            position: fixed;
+            font-size: 20px;
+            z-index: -1;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #ff3385, #e60073);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
             margin-top: 40px;
         }
 
-        .wishes h2 {
-            color: #e91e63;
-            text-align: center;
-            margin-bottom: 20px;
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .wish-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .social-icons {
+            display: flex;
+            justify-content: center;
             gap: 20px;
-            margin-top: 20px;
+            margin: 20px 0;
         }
 
-        .wish-item {
-            position: relative;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-left: 4px solid #e91e63;
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
         }
 
-        .wish-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+        .social-icons a:hover {
+            transform: translateY(-5px);
         }
 
-        .wish-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+        .heart {
+            color: #ffccdd;
+            animation: heartbeat 1.5s infinite;
         }
 
-        .wish-title {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-
             h1 {
-                font-size: 2em;
+                font-size: 2.5rem;
             }
-
-            .flowers {
-                gap: 20px;
+            
+            h2 {
+                font-size: 2rem;
             }
-
-            .flower-card {
-                width: 150px;
-                padding: 20px;
+            
+            .intro-content {
+                flex-direction: column;
+            }
+            
+            .intro-text, .intro-image {
+                min-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="floating">🌸 Ngày 8 Tháng 3 🌸</h1>
-        <p class="subtitle">Ngày Quốc tế Phụ nữ</p>
-
-        <div class="content">
-            <p>
-                Ngày 8 tháng 3 là ngày để tôn vinh và tri ân những người phụ nữ - những người mẹ, người vợ, 
-                người chị em, người bạn gái tuyệt vời trong cuộc sống của chúng ta. Đây là dịp để gửi đến 
-                các bạn những lời chúc tốt đẹp nhất và sự trân trọng sâu sắc.
-            </p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Ngày Quốc Tế Phụ Nữ 8/3</h1>
+            <p class="subtitle">Tôn vinh vẻ đẹp, sự mạnh mẽ và những đóng góp to lớn của phụ nữ trên toàn thế giới</p>
         </div>
+    </header>
 
-        <h2 style="text-align: center; color: #e91e63; margin-bottom: 30px;">
-            Hoa Tặng Ngày 8/3
-        </h2>
-
-        <div class="flowers">
-            <div class="flower-card">
-                <div class="flower-icon">🌹</div>
-                <div class="flower-name">Hoa Hồng</div>
-                <div class="tooltip">
-                    Biểu tượng của tình yêu và sự quý trọng. Hoa hồng đỏ thể hiện tình yêu mãnh liệt, 
-                    hoa hồng hồng tượng trưng cho lòng biết ơn.
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <h2>Về Ngày 8 Tháng 3</h2>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>Ý nghĩa lịch sử</h3>
+                    <p>Ngày Quốc tế Phụ nữ 8/3 bắt nguồn từ phong trào đấu tranh đòi quyền lợi của nữ công nhân ngành dệt may tại Mỹ vào cuối thế kỷ XIX. Ngày nay, đây là dịp để tôn vinh những thành tựu và đóng góp của phụ nữ trên toàn thế giới.</p>
+                    
+                    <h3>Thông điệp ngày nay</h3>
+                    <p>Ngày 8/3 không chỉ là ngày tôn vinh phụ nữ mà còn là dịp để nâng cao nhận thức về bình đẳng giới, quyền phụ nữ và những thách thức mà phụ nữ vẫn đang phải đối mặt trong xã hội hiện đại.</p>
+                    
+                    <h3>Tại Việt Nam</h3>
+                    <p>Ở Việt Nam, ngày 8/3 còn là dịp kỷ niệm cuộc khởi nghĩa của Hai Bà Trưng - hai vị nữ anh hùng dân tộc đã có công đánh đuổi giặc ngoại xâm. Đây cũng là ngày thể hiện sự trân trọng, yêu thương dành cho những người phụ nữ trong gia đình và xã hội.</p>
                 </div>
-            </div>
-
-            <div class="flower-card">
-                <div class="flower-icon">🌷</div>
-                <div class="flower-name">Hoa Tulip</div>
-                <div class="tooltip">
-                    Tượng trưng cho tình yêu hoàn hảo và sự quyến rũ. Tulip đỏ thể hiện tình yêu chân thành, 
-                    tulip vàng mang ý nghĩa niềm vui và hạnh phúc.
-                </div>
-            </div>
-
-            <div class="flower-card">
-                <div class="flower-icon">🌺</div>
-                <div class="flower-name">Hoa Lan</div>
-                <div class="tooltip">
-                    Biểu tượng của sự sang trọng, thanh lịch và vẻ đẹp tinh tế. Lan tượng trưng cho 
-                    sự quý phái và tình yêu cao thượng.
-                </div>
-            </div>
-
-            <div class="flower-card">
-                <div class="flower-icon">🌻</div>
-                <div class="flower-name">Hoa Hướng Dương</div>
-                <div class="tooltip">
-                    Tượng trưng cho sự lạc quan, năng lượng tích cực và niềm tin vào tương lai tươi sáng. 
-                    Thể hiện lòng trung thành và sự ngưỡng mộ.
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Hình ảnh phụ nữ">
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="wishes">
-            <h2>💝 Lời Chúc Tốt Đẹp 💝</h2>
-            <div class="wish-items">
-                <div class="wish-item">
-                    <div class="wish-icon">💐</div>
-                    <div class="wish-title">Sức Khỏe</div>
-                    <div class="tooltip">
-                        Chúc bạn luôn tràn đầy sức khỏe, năng lượng để chinh phục mọi ước mơ và đam mê trong cuộc sống!
-                    </div>
-                </div>
-
-                <div class="wish-item">
-                    <div class="wish-icon">✨</div>
-                    <div class="wish-title">Hạnh Phúc</div>
-                    <div class="tooltip">
-                        Mong bạn luôn tìm thấy niềm vui trong từng khoảnh khắc, hạnh phúc trong mọi điều nhỏ bé của cuộc sống!
-                    </div>
-                </div>
-
-                <div class="wish-item">
-                    <div class="wish-icon">🌟</div>
-                    <div class="wish-title">Thành Công</div>
-                    <div class="tooltip">
-                        Chúc bạn đạt được mọi mục tiêu đã đề ra, thành công rực rỡ trong sự nghiệp và cuộc sống!
-                    </div>
-                </div>
-
-                <div class="wish-item">
-                    <div class="wish-icon">💖</div>
-                    <div class="wish-title">Yêu Thương</div>
-                    <div class="tooltip">
-                        Mong bạn luôn được yêu thương, trân trọng và tìm thấy tình yêu đích thực trong cuộc đời!
-                    </div>
-                </div>
-
-                <div class="wish-item">
-                    <div class="wish-icon">🎨</div>
-                    <div class="wish-title">Tươi Trẻ</div>
-                    <div class="tooltip">
-                        Chúc bạn mãi giữ được tuổi thanh xuân, sự tươi trẻ và nét đẹp rạng ngời mỗi ngày!
-                    </div>
-                </div>
-
-                <div class="wish-item">
-                    <div class="wish-icon">🌈</div>
-                    <div class="wish-title">May Mắn</div>
-                    <div class="tooltip">
-                        Mong những điều tốt đẹp nhất sẽ luôn đến với bạn, may mắn và thuận lợi trong mọi việc!
-                    </div>
-                </div>
+    <!-- Quotes Section -->
+    <section class="quotes-section">
+        <div class="container">
+            <h2>Câu nói truyền cảm hứng</h2>
+            <div class="quote-container">
+                <p class="quote-text">"Phụ nữ là để yêu thương, không phải để hiểu."</p>
+                <p class="quote-author">- Oscar Wilde -</p>
+            </div>
+            <div class="quote-container">
+                <p class="quote-text">"Sức mạnh của người phụ nữ không nằm ở sự đối đầu, mà nằm ở khả năng vượt qua mọi thử thách với lòng kiên nhẫn và tình yêu thương."</p>
+                <p class="quote-author">- Khuyết danh -</p>
+            </div>
+            <div class="quote-container">
+                <p class="quote-text">"Thành công của người phụ nữ không phải là không có kẻ thù, mà là biết đứng dậy sau mỗi lần vấp ngã."</p>
+                <p class="quote-author">- Michelle Obama -</p>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Wishes Generator -->
+    <section class="wishes-section">
+        <div class="container">
+            <h2>Lời chúc 8/3 ý nghĩa</h2>
+            <div class="wish-box">
+                <p class="wish-text" id="wish-text">Chúc mừng ngày 8/3! Chúc những người phụ nữ tuyệt vời luôn xinh đẹp, hạnh phúc và thành công trong cuộc sống!</p>
+            </div>
+            <button class="generate-btn" id="generate-btn">
+                <i class="fas fa-redo-alt"></i> Lời chúc mới
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2>Chúc mừng Ngày Quốc Tế Phụ Nữ 8/3</h2>
+                <p>Trang web được tạo ra để tôn vinh những người phụ nữ tuyệt vời trên thế giới</p>
+                
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <p>Made with <span class="heart">❤</span> for all the amazing women in the world</p>
+                <p>© 2023 - Ngày Quốc Tế Phụ Nữ 8/3</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Flowers Animation -->
+    <div id="flowers-container"></div>
 
     <script>
-        // Add hover effect sound or additional interactions
-        const wishItems = document.querySelectorAll('.wish-item');
-        
-        wishItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.borderLeftWidth = '8px';
-            });
+        // Lời chúc cho ngày 8/3
+        const wishes = [
+            "Chúc mừng ngày 8/3! Chúc những người phụ nữ tuyệt vời luôn xinh đẹp, hạnh phúc và thành công trong cuộc sống!",
+            "Nhân ngày 8/3, chúc bạn luôn rạng ngời, tự tin tỏa sáng và đạt được mọi ước mơ trong cuộc sống!",
+            "Gửi lời chúc tốt đẹp nhất đến những người phụ nữ mạnh mẽ, kiên cường và đầy yêu thương. Chúc các bạn một ngày 8/3 thật ý nghĩa!",
+            "Chúc những người phụ nữ tuyệt vời luôn giữ được nụ cười trên môi, sự lạc quan trong tim và hạnh phúc trọn vẹn trong cuộc sống!",
+            "8/3 là dịp để tôn vinh vẻ đẹp và sự mạnh mẽ của phụ nữ. Chúc các chị em luôn xinh đẹp, hạnh phúc và thành công!",
+            "Chúc mừng ngày Quốc tế Phụ nữ! Mong rằng mọi phụ nữ trên thế giới đều được tôn trọng, yêu thương và có cơ hội phát triển bình đẳng!",
+            "Gửi những lời chúc tốt đẹp nhất đến mẹ, chị, em gái và những người phụ nữ quan trọng trong cuộc đời tôi. Chúc các bạn một ngày 8/3 thật vui vẻ!",
+            "Phụ nữ như những đóa hoa tuyệt đẹp của cuộc đời. Chúc các bạn luôn tỏa ngát hương thơm và rạng rỡ trong mọi hoàn cảnh. Chúc mừng 8/3!"
+        ];
+
+        // Các biểu tượng hoa
+        const flowers = ["🌸", "🌺", "🌷", "💐", "🌹", "🥀", "🌻", "🌼", "💮", "🏵️"];
+
+        // DOM Elements
+        const wishTextElement = document.getElementById('wish-text');
+        const generateBtn = document.getElementById('generate-btn');
+        const flowersContainer = document.getElementById('flowers-container');
+
+        // Hiển thị lời chúc ngẫu nhiên
+        function generateRandomWish() {
+            const randomIndex = Math.floor(Math.random() * wishes.length);
+            wishTextElement.textContent = wishes[randomIndex];
             
-            item.addEventListener('mouseleave', function() {
-                this.style.borderLeftWidth = '4px';
-            });
+            // Thêm hiệu ứng hoa rơi
+            createFallingFlowers(15);
+        }
+
+        // Tạo hiệu ứng hoa rơi
+        function createFallingFlowers(count) {
+            for (let i = 0; i < count; i++) {
+                const flower = document.createElement('div');
+                flower.classList.add('flower');
+                flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+                
+                // Kích thước ngẫu nhiên
+                const size = Math.random() * 20 + 15;
+                flower.style.fontSize = `${size}px`;
+                
+                // Vị trí ngẫu nhiên
+                const startPos = Math.random() * window.innerWidth;
+                flower.style.left = `${startPos}px`;
+                flower.style.top = `-50px`;
+                
+                // Tốc độ rơi ngẫu nhiên
+                const duration = Math.random() * 5 + 5;
+                flower.style.animationDuration = `${duration}s`;
+                
+                // Độ trễ ngẫu nhiên
+                const delay = Math.random() * 2;
+                flower.style.animationDelay = `${delay}s`;
+                
+                flowersContainer.appendChild(flower);
+                
+                // Xóa hoa sau khi rơi xong
+                setTimeout(() => {
+                    flower.remove();
+                }, (duration + delay) * 1000);
+            }
+        }
+
+        // Tạo hoa rơi liên tục
+        function createContinuousFlowers() {
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    createFallingFlowers(1);
+                }
+            }, 500);
+        }
+
+        // Sự kiện khi nhấn nút
+        generateBtn.addEventListener('click', generateRandomWish);
+
+        // Khởi tạo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tạo hoa rơi ban đầu
+            createFallingFlowers(10);
+            
+            // Bắt đầu tạo hoa rơi liên tục
+            createContinuousFlowers();
+            
+            // Tạo lời chúc ngẫu nhiên ban đầu
+            generateRandomWish();
         });
 
-        // Add some sparkle effect on flower cards
-        const flowerCards = document.querySelectorAll('.flower-card');
+        // Thêm hiệu ứng cho các quote khi cuộn
+        const quoteContainers = document.querySelectorAll('.quote-container');
         
-        flowerCards.forEach(card => {
-            card.addEventListener('click', function() {
-                this.style.transform = 'scale(1.1) rotate(5deg)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 200);
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
+        }, observerOptions);
+        
+        // Áp dụng hiệu ứng cho mỗi quote container
+        quoteContainers.forEach(container => {
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(container);
         });
     </script>
 </body>
